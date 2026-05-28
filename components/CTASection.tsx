@@ -1,0 +1,89 @@
+import ContactForm from "./ContactForm";
+
+export default function CTASection() {
+  return (
+    <section
+      id="contact"
+      className="relative py-24 lg:py-36 bg-accent text-paper overflow-hidden"
+    >
+      {/* Background art */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute -top-32 -right-32 w-[600px] h-[600px] rounded-full bg-accent-deep/50 blur-3xl" />
+        <div className="absolute -bottom-40 -left-20 w-[500px] h-[500px] rounded-full bg-ink/20 blur-3xl" />
+      </div>
+
+      <div className="relative max-w-[1380px] mx-auto px-6 lg:px-12">
+        <div className="grid grid-cols-12 gap-x-6 gap-y-12 items-start">
+          {/* Headline + direct contact */}
+          <div className="col-span-12 lg:col-span-7">
+            <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-paper/70">
+              § V · Get in touch
+            </span>
+
+            <h2 className="mt-6 font-display text-[clamp(48px,8vw,140px)] text-paper leading-[0.9] tracking-tight">
+              Let&apos;s make
+              <br />
+              <span className="font-display-italic">something good.</span>
+            </h2>
+
+            <p className="mt-8 max-w-xl text-paper/85 text-lg leading-[1.5]">
+              Tell us about your business. New site, refresh, or a second
+              opinion — we read every brief and reply within a day.
+            </p>
+
+            {/* Direct contact pills */}
+            <div className="mt-10 pt-6 border-t border-paper/20">
+              <div className="font-mono text-[10px] uppercase tracking-[0.22em] text-paper/60 mb-5">
+                ◍ Or skip the form
+              </div>
+
+              <dl className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-6">
+                <div>
+                  <dt className="font-mono text-[10px] uppercase tracking-[0.18em] text-paper/50 mb-1">
+                    Email
+                  </dt>
+                  <dd>
+                    <a
+                      href="mailto:hello@ussly.design"
+                      className="font-display text-2xl lg:text-3xl text-paper hover:underline underline-offset-4 break-all"
+                    >
+                      hello@ussly.design
+                    </a>
+                  </dd>
+                </div>
+
+                <div>
+                  <dt className="font-mono text-[10px] uppercase tracking-[0.18em] text-paper/50 mb-1">
+                    Phone
+                  </dt>
+                  <dd>
+                    <a
+                      href="tel:+14259543019"
+                      className="font-display text-2xl lg:text-3xl text-paper hover:underline underline-offset-4"
+                    >
+                      (425) 954-3019
+                    </a>
+                  </dd>
+                </div>
+
+                <div className="sm:col-span-2">
+                  <dt className="font-mono text-[10px] uppercase tracking-[0.18em] text-paper/50 mb-1">
+                    Based in
+                  </dt>
+                  <dd className="font-display-italic text-xl text-paper">
+                    Lynnwood, WA · Remote-friendly
+                  </dd>
+                </div>
+              </dl>
+            </div>
+          </div>
+
+          {/* Contact form */}
+          <div className="col-span-12 lg:col-span-5 lg:pt-8">
+            <ContactForm />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
