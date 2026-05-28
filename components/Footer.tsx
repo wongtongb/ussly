@@ -9,7 +9,7 @@ const links = {
     { label: "Contact", href: "#contact" },
   ],
   Elsewhere: [
-    { label: "Instagram ↗", href: "#" },
+    { label: "Instagram ↗", href: "https://instagram.com/usslydesignss" },
     { label: "Dribbble ↗", href: "#" },
     { label: "Read.cv ↗", href: "#" },
   ],
