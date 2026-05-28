@@ -10,7 +10,7 @@ const links = {
   ],
   Elsewhere: [
     { label: "Instagram ↗", href: "https://instagram.com/usslydesignss" },
-    { label: "Dribbble ↗", href: "#" },
+    { label: "TikTok ↗", href: "https://tiktok.com/@usslydesigns" },
     { label: "Read.cv ↗", href: "#" },
   ],
 };
