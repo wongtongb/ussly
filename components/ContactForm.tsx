@@ -1,6 +1,6 @@
 "use client";
 
-import { useActionState, useEffect, useRef } from "react";
+import { useActionState, useEffect, useRef, useState } from "react";
 import { sendContact, type ContactState } from "@/app/actions/contact";
 
 const initial: ContactState = { status: "idle" };
@@ -13,16 +13,31 @@ const projectTypes = [
 ];
 
 const budgets = ["< $3k", "$3k–$6k", "$6k–$12k", "$12k+", "Not sure yet"];
+const CUSTOM = "__custom__";
+
+function formatCustomBudget(raw: string): string {
+  const digits = raw.replace(/[^\d]/g, "");
+  if (!digits) return "";
+  const n = parseInt(digits, 10);
+  return `$${n.toLocaleString("en-US")} (custom)`;
+}
 
 export default function ContactForm() {
   const [state, action, pending] = useActionState(sendContact, initial);
   const formRef = useRef<HTMLFormElement>(null);
+  const [selectedBudget, setSelectedBudget] = useState<string>(budgets[0]);
+  const [customBudget, setCustomBudget] = useState<string>("");
 
   useEffect(() => {
     if (state.status === "ok") {
       formRef.current?.reset();
+      setSelectedBudget(budgets[0]);
+      setCustomBudget("");
     }
   }, [state.status]);
+
+  const isCustom = selectedBudget === CUSTOM;
+  const budgetValue = isCustom ? formatCustomBudget(customBudget) : selectedBudget;
 
   return (
     <form
@@ -94,24 +109,46 @@ export default function ContactForm() {
         {/* Budget */}
         <Field label="Budget" htmlFor="budget">
           <div className="flex flex-wrap gap-1.5">
-            {budgets.map((b, i) => (
-              <label
-                key={b}
-                className="group cursor-pointer relative flex items-center"
-              >
-                <input
-                  type="radio"
-                  name="budget"
-                  value={b}
-                  defaultChecked={i === 0}
-                  className="peer sr-only"
-                />
-                <span className="font-mono text-[11px] uppercase tracking-[0.1em] px-2.5 py-1.5 rounded-full border border-ink/15 text-ink-muted transition-colors peer-checked:bg-ink peer-checked:text-paper peer-checked:border-ink hover:border-ink/40">
-                  {b}
-                </span>
-              </label>
-            ))}
+            {[...budgets, CUSTOM].map((b) => {
+              const checked = selectedBudget === b;
+              const label = b === CUSTOM ? "Custom $" : b;
+              return (
+                <label key={b} className="group cursor-pointer relative flex items-center">
+                  <input
+                    type="radio"
+                    name="budget_choice"
+                    value={b}
+                    checked={checked}
+                    onChange={() => setSelectedBudget(b)}
+                    className="peer sr-only"
+                  />
+                  <span className="font-mono text-[11px] uppercase tracking-[0.1em] px-2.5 py-1.5 rounded-full border border-ink/15 text-ink-muted transition-colors peer-checked:bg-ink peer-checked:text-paper peer-checked:border-ink hover:border-ink/40">
+                    {label}
+                  </span>
+                </label>
+              );
+            })}
           </div>
+          {isCustom && (
+            <div className="mt-3 flex items-baseline gap-2">
+              <span className="font-display text-2xl text-accent leading-none">$</span>
+              <input
+                type="text"
+                inputMode="numeric"
+                pattern="[0-9,]*"
+                placeholder="5,400"
+                value={customBudget}
+                onChange={(e) => setCustomBudget(e.target.value.replace(/[^\d,]/g, ""))}
+                aria-label="Custom budget amount in USD"
+                className="form-input flex-1 max-w-[200px] font-display text-2xl"
+                autoFocus
+              />
+              <span className="font-mono text-[10px] uppercase tracking-[0.18em] text-ink-muted">
+                USD
+              </span>
+            </div>
+          )}
+          <input type="hidden" name="budget" value={budgetValue} />
         </Field>
 
         {/* Message */}
