@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Ussly · IG Post 02</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,144,700,50,1;1,144,700,100,1&family=Geist+Mono:wght@500&family=Geist:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #F5F1E8;
+    --paper-deep: #EDE6D6;
+    --ink: #141414;
+    --ink-muted: #5C544A;
+    --rule: #D8CFBC;
+    --accent: #C8501E;
+    --cream: #FBF8F1;
+  }
+  html, body { margin: 0; padding: 0; background: #000; }
+  body { width: 1080px; height: 1350px; font-family: 'Geist', system-ui, sans-serif; }
+  .canvas {
+    position: relative;
+    width: 1080px; height: 1350px;
+    background: var(--cream);
+    overflow: hidden;
+    padding: 80px;
+    box-sizing: border-box;
+    display: flex; flex-direction: column;
+    gap: 56px;
+  }
+  .canvas::after {
+    content: ""; position: absolute; inset: 0;
+    pointer-events: none; opacity: 0.045; mix-blend-mode: multiply;
+    background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  }
+
+  header { position: relative; z-index: 2; display: flex; justify-content: space-between; align-items: baseline; }
+  .kicker {
+    font-family: 'Geist Mono', ui-monospace, monospace;
+    font-size: 22px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+  }
+  .kicker .ac { color: var(--accent); }
+  .index {
+    font-family: 'Fraunces', Georgia, serif;
+    font-style: italic;
+    font-weight: 700;
+    font-size: 64px;
+    color: var(--accent);
+    line-height: 1;
+    font-variation-settings: "opsz" 144, "SOFT" 100, "WONK" 1;
+  }
+
+  .title {
+    position: relative; z-index: 2;
+  }
+  .title h1 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 700;
+    font-size: 152px;
+    line-height: 0.9;
+    letter-spacing: -0.035em;
+    color: var(--ink);
+    margin: 0;
+    font-variation-settings: "opsz" 144, "SOFT" 50, "WONK" 1;
+  }
+  .title h1 .it {
+    font-style: italic;
+    color: var(--accent);
+    font-variation-settings: "opsz" 144, "SOFT" 100, "WONK" 1;
+  }
+  .title .sub {
+    margin-top: 18px;
+    font-family: 'Geist', sans-serif;
+    font-size: 26px;
+    color: var(--ink-muted);
+    letter-spacing: 0.01em;
+  }
+
+  .browser {
+    position: relative; z-index: 2;
+    flex: 1;
+    background: var(--paper);
+    border: 2px solid var(--ink);
+    border-radius: 14px;
+    overflow: hidden;
+    display: flex; flex-direction: column;
+    box-shadow: 14px 14px 0 var(--ink);
+    margin-right: 14px;
+  }
+  .bar {
+    background: var(--paper-deep);
+    border-bottom: 2px solid var(--ink);
+    height: 56px;
+    display: flex; align-items: center; gap: 10px;
+    padding: 0 22px;
+  }
+  .dot { width: 14px; height: 14px; border-radius: 50%; background: var(--ink); }
+  .dot:nth-child(2) { background: var(--accent); }
+  .dot:nth-child(3) { background: var(--ink-muted); }
+  .url {
+    margin-left: 18px;
+    font-family: 'Geist Mono', ui-monospace, monospace;
+    font-size: 18px;
+    letter-spacing: 0.05em;
+    color: var(--ink-muted);
+  }
+  .url .ac { color: var(--accent); }
+
+  .preview {
+    flex: 1;
+    padding: 56px 64px;
+    display: flex; flex-direction: column; justify-content: space-between;
+  }
+  .preview .label {
+    font-family: 'Geist Mono', ui-monospace, monospace;
+    font-size: 16px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+  }
+  .preview .big {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 700;
+    font-size: 96px;
+    line-height: 0.92;
+    letter-spacing: -0.03em;
+    color: var(--ink);
+    font-variation-settings: "opsz" 144, "SOFT" 50, "WONK" 1;
+  }
+  .preview .big .it { font-style: italic; color: var(--accent); }
+  .preview .meta {
+    display: flex; gap: 24px; align-items: center;
+    font-family: 'Geist Mono', ui-monospace, monospace;
+    font-size: 18px; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--ink-muted);
+  }
+  .preview .meta .pill {
+    background: var(--accent);
+    color: var(--paper);
+    padding: 8px 14px;
+    border-radius: 999px;
+  }
+
+  footer {
+    position: relative; z-index: 2;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .dotted {
+    height: 2px;
+    background-image: radial-gradient(circle, var(--ink) 1px, transparent 1.4px);
+    background-size: 8px 2px;
+    background-repeat: repeat-x;
+    width: 340px;
+  }
+</style>
+</head>
+<body>
+  <div class="canvas">
+    <header>
+      <div class="kicker"><span class="ac">/</span>&nbsp;&nbsp;Now Live</div>
+      <div class="index">01.</div>
+    </header>
+
+    <div class="title">
+      <h1>The Yemeni<br/><span class="it">House.</span></h1>
+      <div class="sub">A restaurant site with character, built by hand.</div>
+    </div>
+
+    <div class="browser">
+      <div class="bar">
+        <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+        <div class="url">https://<span class="ac">yemenihouse</span>.netlify.app</div>
+      </div>
+      <div class="preview">
+        <div class="label">Hospitality · Brand &amp; Web</div>
+        <div class="big">Menu,<br/><span class="it">served.</span></div>
+        <div class="meta">
+          <span class="pill">Live</span>
+          <span>Built in&nbsp;14&nbsp;days</span>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div>
+        <div class="dotted"></div>
+        <div class="kicker" style="margin-top:14px">ussly.design</div>
+      </div>
+      <div style="text-align:right">
+        <div class="dotted" style="margin-left:auto"></div>
+        <div class="kicker" style="margin-top:14px"><span class="ac">@</span>usslydesignss</div>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
