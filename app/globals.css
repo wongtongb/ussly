@@ -118,6 +118,14 @@ body {
 }
 .spin-slow { animation: spin-slow 22s linear infinite; }
 
+/* Scarcity pulse */
+@keyframes pulse-dot {
+  0%   { transform: scale(1);   opacity: 0.75; }
+  70%  { transform: scale(2.6); opacity: 0;    }
+  100% { transform: scale(2.6); opacity: 0;    }
+}
+.pulse-dot { animation: pulse-dot 1.8s cubic-bezier(0, 0, 0.2, 1) infinite; }
+
 /* Hand-drawn dotted rule */
 .dotted-rule {
   background-image: radial-gradient(circle, currentColor 1px, transparent 1.4px);

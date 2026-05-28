@@ -1,4 +1,5 @@
 import Navbar from "@/components/Navbar";
+import ScarcityRibbon from "@/components/ScarcityRibbon";
 import Hero from "@/components/Hero";
 import Services from "@/components/Services";
 import Portfolio from "@/components/Portfolio";
@@ -12,6 +13,7 @@ export default function Home() {
     <>
       <Navbar />
       <main>
+        <ScarcityRibbon />
         <Hero />
         <Services />
         <Portfolio />
