@@ -11,7 +11,7 @@ const links = {
   Elsewhere: [
     { label: "Instagram ↗", href: "https://instagram.com/usslydesignss" },
     { label: "TikTok ↗", href: "https://tiktok.com/@usslydesigns" },
-    { label: "Read.cv ↗", href: "#" },
+    { label: "Are.na ↗", href: "https://www.are.na/ussly-designs" },
   ],
 };
 
