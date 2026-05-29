@@ -1,5 +1,11 @@
-const projects = [
+import { getPublicSupabase } from "@/lib/supabase/public";
+import type { PortfolioItem } from "@/lib/supabase/types";
+
+const fallback: PortfolioItem[] = [
   {
+    id: "fallback-1",
+    created_at: "",
+    sort_order: 1,
     num: "001",
     year: "2025",
     title: "The Yemeni House",
@@ -11,8 +17,12 @@ const projects = [
     accent: "from-amber-700 via-orange-800 to-stone-900",
     url: "https://yemenihouse.netlify.app",
     domain: "yemenihouse.netlify.app",
+    published: true,
   },
   {
+    id: "fallback-2",
+    created_at: "",
+    sort_order: 2,
     num: "002",
     year: "2024",
     title: "Northwest Fades",
@@ -24,10 +34,26 @@ const projects = [
     accent: "from-slate-700 via-slate-800 to-stone-900",
     url: "https://northwestfades.netlify.app",
     domain: "northwestfades.netlify.app",
+    published: true,
   },
 ];
 
-export default function Portfolio() {
+async function getProjects(): Promise<PortfolioItem[]> {
+  try {
+    const sb = getPublicSupabase();
+    const { data } = await sb
+      .from("portfolio")
+      .select("*")
+      .eq("published", true)
+      .order("sort_order", { ascending: true });
+    return (data && data.length > 0 ? data : fallback) as PortfolioItem[];
+  } catch {
+    return fallback;
+  }
+}
+
+export default async function Portfolio() {
+  const projects = await getProjects();
   return (
     <section id="work" className="relative py-24 lg:py-36">
       <div className="max-w-[1380px] mx-auto px-6 lg:px-12">

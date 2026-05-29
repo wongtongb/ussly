@@ -1,4 +1,7 @@
-const testimonials = [
+import { getPublicSupabase } from "@/lib/supabase/public";
+import type { Testimonial } from "@/lib/supabase/types";
+
+const fallback: Pick<Testimonial, "quote" | "name" | "role" | "org" | "accent">[] = [
   {
     quote:
       "Before Ussly we had no real online presence. Now people book through the site, find us on Google, and show up already knowing what we offer. The site just speaks for us.",
@@ -25,7 +28,22 @@ const testimonials = [
   },
 ];
 
-export default function Testimonials() {
+async function getQuotes() {
+  try {
+    const sb = getPublicSupabase();
+    const { data } = await sb
+      .from("testimonials")
+      .select("quote, name, role, org, accent")
+      .eq("published", true)
+      .order("sort_order", { ascending: true });
+    return data && data.length > 0 ? data : fallback;
+  } catch {
+    return fallback;
+  }
+}
+
+export default async function Testimonials() {
+  const testimonials = await getQuotes();
   return (
     <section id="testimonials" className="relative py-24 lg:py-36">
       <div className="max-w-[1380px] mx-auto px-6 lg:px-12">
@@ -70,7 +88,7 @@ export default function Testimonials() {
                 >
                   {t.quote
                     .split(" ")
-                    .map((word, idx, arr) => {
+                    .map((word: string, idx: number, arr: string[]) => {
                       const isLast = idx === arr.length - 1;
                       return (
                         <span key={idx}>

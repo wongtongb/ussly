@@ -1,6 +1,7 @@
 "use server";
 
 import { Resend } from "resend";
+import { getAdminSupabase } from "@/lib/supabase/admin";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -34,6 +35,21 @@ export async function sendContact(
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!emailRegex.test(email)) {
     return { status: "error", message: "That email doesn't look quite right." };
+  }
+
+  // Persist to DB first — survives even if email send fails.
+  try {
+    const supabase = getAdminSupabase();
+    await supabase.from("briefs").insert({
+      name,
+      email,
+      project: project || null,
+      budget: budget || null,
+      message,
+    });
+  } catch (err) {
+    console.error("Brief persist failed", err);
+    // Don't block the user — still try to send the email.
   }
 
   if (!process.env.RESEND_API_KEY) {
