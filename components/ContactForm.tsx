@@ -45,9 +45,8 @@ export default function ContactForm() {
       action={action}
       className="bg-paper text-ink rounded-sm border border-ink/10 p-7 lg:p-8"
     >
-      <div className="font-mono text-[10px] uppercase tracking-[0.22em] text-ink-muted mb-6 flex items-center justify-between">
-        <span>Project brief</span>
-        <span className="text-accent">§ 01 / 04</span>
+      <div className="font-mono text-[10px] uppercase tracking-[0.22em] text-ink-muted mb-6">
+        Project brief
       </div>
 
       {/* Honeypot — hidden from humans */}
@@ -198,30 +197,6 @@ export default function ContactForm() {
       <p className="mt-4 font-mono text-[10px] uppercase tracking-[0.18em] text-ink-muted text-center">
         Reply within 24 hours. No spam, ever.
       </p>
-
-      <style>{`
-        .form-input {
-          width: 100%;
-          background: transparent;
-          border: 0;
-          border-bottom: 1px solid var(--color-rule);
-          padding: 8px 0 10px;
-          font-family: inherit;
-          font-size: 16px;
-          color: var(--color-ink);
-          transition: border-color 0.2s ease;
-          outline: none;
-        }
-        .form-input:focus {
-          border-bottom-color: var(--color-accent);
-        }
-        .form-input::placeholder {
-          color: color-mix(in oklab, var(--color-ink-muted) 60%, transparent);
-        }
-        .form-input:focus::placeholder {
-          color: color-mix(in oklab, var(--color-ink-muted) 35%, transparent);
-        }
-      `}</style>
     </form>
   );
 }

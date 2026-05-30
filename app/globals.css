@@ -63,6 +63,29 @@ body {
   transform: translateY(-3px);
 }
 
+/* Contact form inputs */
+.form-input {
+  width: 100%;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--color-rule);
+  padding: 8px 0 10px;
+  font-family: inherit;
+  font-size: 16px;
+  color: var(--color-ink);
+  transition: border-color 0.2s ease;
+  outline: none;
+}
+.form-input:focus {
+  border-bottom-color: var(--color-accent);
+}
+.form-input::placeholder {
+  color: color-mix(in oklab, var(--color-ink-muted) 60%, transparent);
+}
+.form-input:focus::placeholder {
+  color: color-mix(in oklab, var(--color-ink-muted) 35%, transparent);
+}
+
 /* Reveal entrance — single subtle fade */
 @keyframes rise {
   from { opacity: 0; transform: translateY(28px); }
@@ -87,4 +110,16 @@ body {
   background-repeat: repeat-x;
   background-position: center;
   height: 2px;
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

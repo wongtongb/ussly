@@ -202,7 +202,7 @@ export default async function Portfolio() {
             href="#contact"
             className="group inline-flex items-center gap-2 bg-ink text-paper px-6 py-3 rounded-full text-sm font-medium hover:bg-accent transition-colors self-start sm:self-auto"
           >
-            Pitch us a project
+            Claim the slot
             <span>↗</span>
           </a>
         </div>

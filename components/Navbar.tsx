@@ -65,7 +65,7 @@ export default function Navbar() {
               href="#contact"
               className="group inline-flex items-center gap-2 text-sm font-medium text-paper bg-ink px-5 py-2.5 rounded-full hover:bg-accent transition-colors"
             >
-              Start a project
+              Claim a slot
               <span>↗</span>
             </a>
           </div>
@@ -101,7 +101,7 @@ export default function Navbar() {
             className="mt-2 inline-flex items-center gap-2 justify-center bg-ink text-paper rounded-full px-5 py-3 text-sm"
             onClick={() => setOpen(false)}
           >
-            Start a project ↗
+            Claim a slot ↗
           </a>
         </div>
       )}

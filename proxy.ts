@@ -1,7 +1,7 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { createServerClient } from "@supabase/ssr";
 
-export async function middleware(req: NextRequest) {
+export async function proxy(req: NextRequest) {
   // Only guard /admin/* (except /admin/login + auth callbacks)
   const { pathname } = req.nextUrl;
   const isAdminRoute = pathname.startsWith("/admin");
