@@ -1,8 +1,8 @@
 import Link from "next/link";
-import { getAdminSupabase } from "@/lib/supabase/admin";
+import { requireAdminPage } from "@/lib/supabase/require-admin";
 
 export default async function AdminHome() {
-  const admin = getAdminSupabase();
+  const { admin } = await requireAdminPage();
 
   const [briefs, portfolio, testimonials, availability] = await Promise.all([
     admin.from("briefs").select("id, status", { count: "exact" }),

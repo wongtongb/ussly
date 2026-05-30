@@ -1,9 +1,9 @@
-import { getAdminSupabase } from "@/lib/supabase/admin";
+import { requireAdminPage } from "@/lib/supabase/require-admin";
 import { upsertPortfolio, deletePortfolio } from "../actions";
 import type { PortfolioItem } from "@/lib/supabase/types";
 
 export default async function PortfolioAdminPage() {
-  const admin = getAdminSupabase();
+  const { admin } = await requireAdminPage();
   const { data } = await admin
     .from("portfolio")
     .select("*")

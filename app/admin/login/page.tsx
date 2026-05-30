@@ -16,6 +16,9 @@ export default function LoginPage() {
     const { error: err } = await supabase.auth.signInWithOtp({
       email: email.trim(),
       options: {
+        // Don't auto-create accounts: only emails already provisioned in
+        // Supabase Auth (and on the admin_emails allowlist) can request a link.
+        shouldCreateUser: false,
         emailRedirectTo: `${window.location.origin}/admin/auth/callback`,
       },
     });

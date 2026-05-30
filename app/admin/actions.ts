@@ -3,26 +3,8 @@
 import { redirect } from "next/navigation";
 import { revalidatePath } from "next/cache";
 import { getServerSupabase } from "@/lib/supabase/server";
-import { getAdminSupabase } from "@/lib/supabase/admin";
+import { requireAdmin } from "@/lib/supabase/require-admin";
 import type { BriefStatus } from "@/lib/supabase/types";
-
-async function requireAdmin() {
-  const supabase = await getServerSupabase();
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
-  if (!user) throw new Error("Not signed in");
-  const email = user.email;
-  if (!email) throw new Error("No email on session");
-  const admin = getAdminSupabase();
-  const { data } = await admin
-    .from("admin_emails")
-    .select("email")
-    .eq("email", email)
-    .maybeSingle();
-  if (!data) throw new Error("Not an admin");
-  return { user, admin };
-}
 
 export async function signOut() {
   const supabase = await getServerSupabase();

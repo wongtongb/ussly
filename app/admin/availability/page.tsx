@@ -1,9 +1,9 @@
-import { getAdminSupabase } from "@/lib/supabase/admin";
+import { requireAdminPage } from "@/lib/supabase/require-admin";
 import { updateAvailability } from "../actions";
 import type { Availability } from "@/lib/supabase/types";
 
 export default async function AvailabilityPage() {
-  const admin = getAdminSupabase();
+  const { admin } = await requireAdminPage();
   const { data } = await admin
     .from("availability")
     .select("*")

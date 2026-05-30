@@ -1,11 +1,11 @@
-import { getAdminSupabase } from "@/lib/supabase/admin";
+import { requireAdminPage } from "@/lib/supabase/require-admin";
 import { updateBriefStatus, deleteBrief } from "../actions";
 import type { Brief, BriefStatus } from "@/lib/supabase/types";
 
 const statuses: BriefStatus[] = ["new", "replied", "archived"];
 
 export default async function BriefsPage() {
-  const admin = getAdminSupabase();
+  const { admin } = await requireAdminPage();
   const { data: briefs } = await admin
     .from("briefs")
     .select("*")

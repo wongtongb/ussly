@@ -1,9 +1,9 @@
-import { getAdminSupabase } from "@/lib/supabase/admin";
+import { requireAdminPage } from "@/lib/supabase/require-admin";
 import { upsertTestimonial, deleteTestimonial } from "../actions";
 import type { Testimonial } from "@/lib/supabase/types";
 
 export default async function TestimonialsAdminPage() {
-  const admin = getAdminSupabase();
+  const { admin } = await requireAdminPage();
   const { data } = await admin
     .from("testimonials")
     .select("*")
