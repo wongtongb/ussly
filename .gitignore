@@ -28,6 +28,7 @@
 # local dev/agent artifacts
 /screenshots
 /.agents
+.claude/agent-memory/
 
 # debug
 npm-debug.log*
