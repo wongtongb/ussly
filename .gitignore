@@ -23,6 +23,11 @@
 # misc
 .DS_Store
 *.pem
+*.swp
+
+# local dev/agent artifacts
+/screenshots
+/.agents
 
 # debug
 npm-debug.log*
