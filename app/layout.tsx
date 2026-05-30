@@ -22,10 +22,42 @@ const geistMono = Geist_Mono({
   display: "swap",
 });
 
+const SITE_URL = "https://ussly.design";
+const DESCRIPTION =
+  "Ussly is a small independent studio in Lynnwood, WA hand-coding websites for local businesses with character. Real craft, no templates.";
+
 export const metadata: Metadata = {
-  title: "Ussly — Independent Web Design Studio",
-  description:
-    "Ussly is a small independent studio designing websites for businesses with character. Real craft, no shortcuts.",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: "Ussly — Independent Web Design Studio",
+    template: "%s — Ussly",
+  },
+  description: DESCRIPTION,
+  keywords: [
+    "web design studio",
+    "Lynnwood web design",
+    "small business websites",
+    "independent design studio",
+    "hand-coded websites",
+    "restaurant web design",
+    "Seattle web design",
+  ],
+  authors: [{ name: "Ussly", url: SITE_URL }],
+  creator: "Ussly",
+  alternates: { canonical: "/" },
+  openGraph: {
+    type: "website",
+    siteName: "Ussly",
+    title: "Ussly — Independent Web Design Studio",
+    description: DESCRIPTION,
+    url: SITE_URL,
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Ussly — Independent Web Design Studio",
+    description: DESCRIPTION,
+  },
 };
 
 export default function RootLayout({
