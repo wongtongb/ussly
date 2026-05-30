@@ -37,7 +37,7 @@ export default function Navbar() {
               Ussly
             </span>
             <span className="font-mono text-[10px] uppercase tracking-[0.18em] text-ink-muted hidden sm:inline">
-              ◍ est. 2023
+              est. 2023
             </span>
           </Link>
 
@@ -66,7 +66,7 @@ export default function Navbar() {
               className="group inline-flex items-center gap-2 text-sm font-medium text-paper bg-ink px-5 py-2.5 rounded-full hover:bg-accent transition-colors"
             >
               Start a project
-              <span className="arrow-pop">↗</span>
+              <span>↗</span>
             </a>
           </div>
 

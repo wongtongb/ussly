@@ -46,7 +46,7 @@ export default function ContactForm() {
       className="bg-paper text-ink rounded-sm border border-ink/10 p-7 lg:p-8"
     >
       <div className="font-mono text-[10px] uppercase tracking-[0.22em] text-ink-muted mb-6 flex items-center justify-between">
-        <span>◍ Project brief</span>
+        <span>Project brief</span>
         <span className="text-accent">§ 01 / 04</span>
       </div>
 
@@ -190,7 +190,7 @@ export default function ContactForm() {
         ) : (
           <>
             Send brief
-            <span className="arrow-pop">↗</span>
+            <span>↗</span>
           </>
         )}
       </button>

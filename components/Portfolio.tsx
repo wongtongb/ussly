@@ -203,7 +203,7 @@ export default async function Portfolio() {
             className="group inline-flex items-center gap-2 bg-ink text-paper px-6 py-3 rounded-full text-sm font-medium hover:bg-accent transition-colors self-start sm:self-auto"
           >
             Pitch us a project
-            <span className="arrow-pop">↗</span>
+            <span>↗</span>
           </a>
         </div>
       </div>

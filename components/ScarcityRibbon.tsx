@@ -43,8 +43,8 @@ export default async function ScarcityRibbon() {
         <div className="max-w-[1380px] mx-auto px-6 lg:px-12">
           <div className="flex items-center justify-between gap-4 py-2.5 lg:py-3 font-mono text-[10px] lg:text-[11px] uppercase tracking-[0.22em]">
             <div className="flex items-center gap-3 lg:gap-5 overflow-hidden">
-              <span className="hidden sm:inline shrink-0">◍ {a.booking_label}</span>
-              <span className="hidden sm:inline opacity-60 shrink-0">✺</span>
+              <span className="hidden sm:inline shrink-0">{a.booking_label}</span>
+              <span className="hidden sm:inline opacity-60 shrink-0">·</span>
               <span className="flex items-center gap-2 shrink-0">
                 <span className="relative flex h-1.5 w-1.5">
                   <span className="absolute inline-flex h-full w-full rounded-full bg-paper opacity-75 pulse-dot" />
@@ -52,11 +52,11 @@ export default async function ScarcityRibbon() {
                 </span>
                 <span className="font-semibold">{slotsText}</span>
               </span>
-              <span className="opacity-60 shrink-0">✺</span>
+              <span className="opacity-60 shrink-0">·</span>
               <span className="shrink-0">{a.next_open_label}</span>
               {a.after_label && (
                 <>
-                  <span className="hidden lg:inline opacity-60 shrink-0">✺</span>
+                  <span className="hidden lg:inline opacity-60 shrink-0">·</span>
                   <span className="hidden lg:inline shrink-0 truncate">{a.after_label}</span>
                 </>
               )}
@@ -66,7 +66,7 @@ export default async function ScarcityRibbon() {
               className="group inline-flex items-center gap-1.5 shrink-0 border-b border-paper/40 hover:border-paper pb-px transition-colors"
             >
               <span>Claim it</span>
-              <span className="arrow-pop">↗</span>
+              <span>↗</span>
             </a>
           </div>
         </div>

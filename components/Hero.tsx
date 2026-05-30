@@ -2,10 +2,10 @@ export default function Hero() {
   return (
     <section className="relative pt-16 lg:pt-24 pb-20 lg:pb-28 overflow-hidden">
       <div className="max-w-[1380px] mx-auto px-6 lg:px-12">
-        <div className="flex items-center justify-between mb-10 lg:mb-14 rise rise-1">
+        <div className="flex items-center justify-between mb-10 lg:mb-14">
           <div className="flex items-center gap-3">
             <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-ink-muted">
-              ◍ Independent Studio · Vol. 01
+              Independent Studio · Vol. 01
             </span>
           </div>
           <div className="hidden sm:flex items-center gap-6 font-mono text-[10px] uppercase tracking-[0.18em] text-ink-muted">
@@ -16,7 +16,7 @@ export default function Hero() {
         </div>
 
         {/* Massive editorial headline */}
-        <h1 className="font-display text-[clamp(64px,12vw,200px)] text-ink leading-[0.88] tracking-[-0.035em] rise rise-2">
+        <h1 className="font-display text-[clamp(64px,12vw,200px)] text-ink leading-[0.88] tracking-[-0.035em] rise">
           <span className="block font-black">Websites that</span>
           <span className="block">
             <span className="font-display-italic font-medium text-accent">
@@ -27,10 +27,10 @@ export default function Hero() {
         </h1>
 
         {/* Sub-grid: lede + intro */}
-        <div className="grid grid-cols-12 gap-x-6 gap-y-10 mt-14 lg:mt-20 rise rise-3">
+        <div className="grid grid-cols-12 gap-x-6 gap-y-10 mt-14 lg:mt-20">
           <div className="col-span-12 md:col-span-5 lg:col-span-4 md:col-start-1">
             <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-ink-muted mb-3">
-              ¶ The studio
+              The studio
             </p>
             <p className="font-display text-2xl lg:text-[28px] leading-[1.15] text-ink tracking-tight">
               A small, sharp practice making sites that{" "}
@@ -41,7 +41,7 @@ export default function Hero() {
 
           <div className="col-span-12 md:col-span-5 md:col-start-7 lg:col-span-4 lg:col-start-8">
             <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-ink-muted mb-3">
-              ¶ What it&apos;s worth
+              What it&apos;s worth
             </p>
             <p className="text-base lg:text-[17px] leading-[1.55] text-ink/85">
               Most small-business sites are a tax. Ours pay rent — more bookings,
@@ -56,20 +56,20 @@ export default function Hero() {
                 className="group inline-flex items-center gap-2 bg-ink text-paper px-5 py-3 rounded-full text-sm font-medium hover:bg-accent transition-colors"
               >
                 Claim the slot
-                <span className="arrow-pop">↗</span>
+                <span>↗</span>
               </a>
               <a
                 href="#work"
-                className="group inline-flex items-center gap-2 text-ink px-1 py-3 text-sm font-medium border-b border-ink hover:text-accent hover:border-accent transition-colors"
+                className="inline-flex items-center gap-2 text-ink px-1 py-3 text-sm font-medium border-b border-ink hover:text-accent hover:border-accent transition-colors"
               >
-                <span className="marker">See receipts</span>
+                See receipts
               </a>
             </div>
           </div>
         </div>
 
         {/* Stats strip — receipts */}
-        <div className="mt-20 lg:mt-28 pt-8 border-t border-rule grid grid-cols-2 lg:grid-cols-4 gap-y-8 rise rise-4">
+        <div className="mt-20 lg:mt-28 pt-8 border-t border-rule grid grid-cols-2 lg:grid-cols-4 gap-y-8">
           {[
             { prefix: "+", num: "42", suffix: "%", label: "Reservations lift · Yemeni House" },
             { prefix: "#", num: "1", suffix: "", label: "On Google · Northwest Fades" },

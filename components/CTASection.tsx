@@ -6,12 +6,6 @@ export default function CTASection() {
       id="contact"
       className="relative py-24 lg:py-36 bg-accent text-paper overflow-hidden"
     >
-      {/* Background art */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute -top-32 -right-32 w-[600px] h-[600px] rounded-full bg-accent-deep/50 blur-3xl" />
-        <div className="absolute -bottom-40 -left-20 w-[500px] h-[500px] rounded-full bg-ink/20 blur-3xl" />
-      </div>
-
       <div className="relative max-w-[1380px] mx-auto px-6 lg:px-12">
         <div className="grid grid-cols-12 gap-x-6 gap-y-12 items-start">
           {/* Headline + direct contact */}
@@ -34,7 +28,7 @@ export default function CTASection() {
             {/* Direct contact pills */}
             <div className="mt-10 pt-6 border-t border-paper/20">
               <div className="font-mono text-[10px] uppercase tracking-[0.22em] text-paper/60 mb-5">
-                ◍ Or skip the form
+                Or skip the form
               </div>
 
               <dl className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-6">

@@ -55,7 +55,7 @@ export default function Footer() {
                       rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
                       className="text-ink hover:text-accent transition-colors text-[15px] inline-flex items-center gap-1"
                     >
-                      <span className="marker">{item.label}</span>
+                      {item.label}
                     </a>
                   </li>
                 ))}

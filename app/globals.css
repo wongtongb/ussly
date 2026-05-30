@@ -63,22 +63,7 @@ body {
   transform: translateY(-3px);
 }
 
-/* Marker pen underline */
-.marker {
-  background-image: linear-gradient(transparent 62%, rgba(200, 80, 30, 0.28) 62%, rgba(200, 80, 30, 0.28) 88%, transparent 88%);
-  padding: 0 0.08em;
-}
-
-/* Rotating arrow on hover */
-.arrow-pop {
-  display: inline-block;
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.group:hover .arrow-pop {
-  transform: translate(4px, -4px);
-}
-
-/* Reveal entrance */
+/* Reveal entrance — single subtle fade */
 @keyframes rise {
   from { opacity: 0; transform: translateY(28px); }
   to   { opacity: 1; transform: translateY(0); }
@@ -86,10 +71,6 @@ body {
 .rise {
   animation: rise 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
-.rise-1 { animation-delay: 0.05s; }
-.rise-2 { animation-delay: 0.18s; }
-.rise-3 { animation-delay: 0.32s; }
-.rise-4 { animation-delay: 0.46s; }
 
 /* Scarcity pulse */
 @keyframes pulse-dot {

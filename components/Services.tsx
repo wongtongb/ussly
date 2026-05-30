@@ -95,7 +95,7 @@ export default function Services() {
                       key={t}
                       className="font-mono text-[10px] uppercase tracking-[0.16em] text-ink-muted"
                     >
-                      ◦ {t}
+                      {t}
                     </li>
                   ))}
                 </ul>
