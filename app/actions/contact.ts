@@ -37,7 +37,8 @@ export async function sendContact(
     return { status: "error", message: "That email doesn't look quite right." };
   }
 
-  // Persist to DB first — survives even if email send fails.
+  // Persist to DB first — the lead is captured even if email send fails.
+  let persisted = false;
   try {
     const supabase = getAdminSupabase();
     await supabase.from("briefs").insert({
@@ -47,17 +48,20 @@ export async function sendContact(
       budget: budget || null,
       message,
     });
+    persisted = true;
   } catch (err) {
     console.error("Brief persist failed", err);
     // Don't block the user — still try to send the email.
   }
 
+  const ok: ContactState = { status: "ok", message: "Got it. We'll reply within a day." };
+
   if (!process.env.RESEND_API_KEY) {
-    console.warn("RESEND_API_KEY is not set");
-    return {
-      status: "error",
-      message: "Email service isn't configured yet. Email us at hello@ussly.design.",
-    };
+    console.warn("RESEND_API_KEY is not set — brief saved, notification email skipped");
+    // The brief was stored, so the lead isn't lost; don't show the user an error.
+    return persisted
+      ? ok
+      : { status: "error", message: "Couldn't reach us right now. Email hello@ussly.design." };
   }
 
   try {
@@ -80,15 +84,17 @@ export async function sendContact(
 
     if (error) {
       console.error("Resend error", error);
-      return { status: "error", message: "Couldn't send right now. Try again or email hello@ussly.design." };
+      // Notification failed but the brief is saved — still acknowledge.
+      return persisted
+        ? ok
+        : { status: "error", message: "Couldn't send right now. Try again or email hello@ussly.design." };
     }
 
-    return {
-      status: "ok",
-      message: "Got it. We'll reply within a day.",
-    };
+    return ok;
   } catch (err) {
     console.error("Contact send failed", err);
-    return { status: "error", message: "Couldn't send right now. Try again in a minute." };
+    return persisted
+      ? ok
+      : { status: "error", message: "Couldn't send right now. Try again in a minute." };
   }
 }
