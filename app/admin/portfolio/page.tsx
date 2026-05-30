@@ -157,11 +157,12 @@ function ProjectRow({ item }: { item: PortfolioItem | null }) {
 
 function DeleteButton({ action }: { action: () => Promise<void> }) {
   return (
-    <form action={action}>
-      <button className="font-mono text-[10px] uppercase tracking-[0.18em] text-ink-muted hover:text-accent transition-colors">
-        Delete
-      </button>
-    </form>
+    <button
+      formAction={action}
+      className="font-mono text-[10px] uppercase tracking-[0.18em] text-ink-muted hover:text-accent transition-colors"
+    >
+      Delete
+    </button>
   );
 }
 

@@ -110,16 +110,15 @@ function QuoteRow({ item }: { item: Testimonial | null }) {
 
           <div className="flex items-center gap-3">
             {item && (
-              <form
-                action={async () => {
+              <button
+                formAction={async () => {
                   "use server";
                   await deleteTestimonial(item.id);
                 }}
+                className="font-mono text-[10px] uppercase tracking-[0.18em] text-ink-muted hover:text-accent transition-colors"
               >
-                <button className="font-mono text-[10px] uppercase tracking-[0.18em] text-ink-muted hover:text-accent transition-colors">
-                  Delete
-                </button>
-              </form>
+                Delete
+              </button>
             )}
             <button className="bg-ink text-paper rounded-full px-5 py-2.5 text-sm font-medium hover:bg-accent transition-colors">
               {isNew ? "Add quote" : "Save"}
