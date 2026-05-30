@@ -38,7 +38,7 @@ export default function RootLayout({
       lang="en"
       className={`${fraunces.variable} ${geist.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="grain min-h-full flex flex-col bg-paper text-ink font-sans">{children}</body>
+      <body className="min-h-full flex flex-col bg-paper text-ink font-sans">{children}</body>
     </html>
   );
 }

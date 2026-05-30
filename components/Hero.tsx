@@ -16,28 +16,15 @@ export default function Hero() {
         </div>
 
         {/* Massive editorial headline */}
-        <div className="relative">
-          <h1 className="font-display text-[clamp(64px,12vw,200px)] text-ink leading-[0.88] tracking-[-0.035em] rise rise-2">
-            <span className="block font-black">Websites that</span>
-            <span className="block">
-              <span className="font-display-italic font-medium text-accent">
-                earn their keep,
-              </span>
+        <h1 className="font-display text-[clamp(64px,12vw,200px)] text-ink leading-[0.88] tracking-[-0.035em] rise rise-2">
+          <span className="block font-black">Websites that</span>
+          <span className="block">
+            <span className="font-display-italic font-medium text-accent">
+              earn their keep,
             </span>
-            <span className="block font-black">built by hand.</span>
-          </h1>
-
-          {/* Decorative asterisk */}
-          <div className="absolute -top-6 right-0 sm:right-8 lg:right-24 hidden sm:block">
-            <svg
-              viewBox="0 0 100 100"
-              className="w-12 lg:w-20 text-accent spin-slow"
-              fill="currentColor"
-            >
-              <path d="M50 0 L55 45 L100 50 L55 55 L50 100 L45 55 L0 50 L45 45 Z" />
-            </svg>
-          </div>
-        </div>
+          </span>
+          <span className="block font-black">built by hand.</span>
+        </h1>
 
         {/* Sub-grid: lede + intro */}
         <div className="grid grid-cols-12 gap-x-6 gap-y-10 mt-14 lg:mt-20 rise rise-3">
@@ -102,32 +89,6 @@ export default function Hero() {
               <span className="font-mono text-[10px] uppercase tracking-[0.18em] text-ink-muted mt-2 max-w-[180px]">
                 {stat.label}
               </span>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Bottom ticker */}
-      <div className="mt-20 lg:mt-28 border-y border-rule py-4 overflow-hidden bg-paper-deep/30">
-        <div className="flex ticker whitespace-nowrap font-display text-3xl lg:text-5xl tracking-tight text-ink/90">
-          {Array.from({ length: 2 }).map((_, i) => (
-            <div key={i} className="flex items-center shrink-0">
-              {[
-                "Web design",
-                "Brand systems",
-                "Editorial layouts",
-                "Restaurant sites",
-                "Local business",
-                "Custom builds",
-                "No templates",
-              ].map((word) => (
-                <span key={`${i}-${word}`} className="flex items-center px-6">
-                  <span>{word}</span>
-                  <span className="ml-12 text-accent font-display-italic">
-                    ✺
-                  </span>
-                </span>
-              ))}
             </div>
           ))}
         </div>
