@@ -15,8 +15,8 @@ const fallback: PortfolioItem[] = [
     role: ["Web design", "Build", "Copy"],
     palette: ["bg-[#7A2F0E]", "bg-[#C8501E]", "bg-[#EBC591]"],
     accent: "from-amber-700 via-orange-800 to-stone-900",
-    url: "https://yemenihouse.netlify.app",
-    domain: "yemenihouse.netlify.app",
+    url: "https://yemeni-house.vercel.app",
+    domain: "yemeni-house.vercel.app",
     published: true,
   },
   {
