@@ -4,16 +4,22 @@ import { requireAdminPage } from "@/lib/supabase/require-admin";
 export default async function AdminHome() {
   const { admin } = await requireAdminPage();
 
-  const [briefs, portfolio, testimonials, availability] = await Promise.all([
-    admin.from("briefs").select("id, status", { count: "exact" }),
-    admin.from("portfolio").select("id", { count: "exact" }),
-    admin.from("testimonials").select("id", { count: "exact" }),
-    admin.from("availability").select("*").eq("id", 1).single(),
-  ]);
+  // Count-only queries (head: true) so the overview never pulls full rows
+  // into memory just to tally them.
+  const [briefsTotal, briefsNew, portfolio, testimonials, availability] =
+    await Promise.all([
+      admin.from("briefs").select("*", { count: "exact", head: true }),
+      admin
+        .from("briefs")
+        .select("*", { count: "exact", head: true })
+        .eq("status", "new"),
+      admin.from("portfolio").select("*", { count: "exact", head: true }),
+      admin.from("testimonials").select("*", { count: "exact", head: true }),
+      admin.from("availability").select("*").eq("id", 1).single(),
+    ]);
 
-  const newCount =
-    briefs.data?.filter((b) => b.status === "new").length ?? 0;
-  const totalBriefs = briefs.count ?? 0;
+  const newCount = briefsNew.count ?? 0;
+  const totalBriefs = briefsTotal.count ?? 0;
   const portfolioCount = portfolio.count ?? 0;
   const testimonialsCount = testimonials.count ?? 0;
   const a = availability.data;

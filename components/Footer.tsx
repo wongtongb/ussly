@@ -33,8 +33,8 @@ export default function Footer() {
         <div className="grid grid-cols-12 gap-x-6 gap-y-10 border-t border-ink pt-10">
           <div className="col-span-12 md:col-span-5">
             <p className="font-display text-2xl text-ink max-w-sm leading-snug">
-              Independent web design studio for businesses with{" "}
-              <span className="font-display-italic text-accent">character.</span>
+              A one-person web studio for businesses worth{" "}
+              <span className="font-display-italic text-accent">remembering.</span>
             </p>
             <p className="mt-6 font-mono text-[10px] uppercase tracking-[0.18em] text-ink-muted">
               Lynnwood, WA · Open for projects

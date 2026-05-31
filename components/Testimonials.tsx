@@ -57,10 +57,10 @@ export default async function Testimonials() {
           </div>
           <div className="col-span-12 md:col-span-9">
             <h2 className="font-display text-[clamp(40px,7vw,108px)] text-ink leading-[0.92] tracking-tight">
-              From the people
+              What they say
               <br />
               <span className="font-display-italic text-accent">
-                we shipped for.
+                once it&apos;s live.
               </span>
             </h2>
           </div>

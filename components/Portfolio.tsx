@@ -67,15 +67,15 @@ export default async function Portfolio() {
           </div>
           <div className="col-span-12 md:col-span-9">
             <h2 className="font-display text-[clamp(40px,7vw,108px)] text-ink leading-[0.92] tracking-tight">
-              Real businesses,
+              Live work,
               <br />
               <span className="font-display-italic text-accent">
-                real websites.
+                no mockups.
               </span>
             </h2>
             <p className="mt-6 max-w-xl text-ink/80 text-base lg:text-[17px] leading-[1.55]">
-              Two projects, both live, both shipping orders. Nothing in this
-              section is a concept piece.
+              Both of these are open for business right now. Click through.
+              Nothing here is a concept piece or a coming-soon.
             </p>
           </div>
         </div>
@@ -196,7 +196,7 @@ export default async function Portfolio() {
         {/* Bottom note */}
         <div className="mt-20 pt-8 border-t border-ink flex flex-col sm:flex-row sm:items-end justify-between gap-4">
           <p className="font-display-italic text-2xl lg:text-3xl text-ink max-w-xl">
-            Could yours be next?
+            Want to be number three?
           </p>
           <a
             href="#contact"

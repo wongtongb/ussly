@@ -15,14 +15,14 @@ export default function CTASection() {
             </span>
 
             <h2 className="mt-6 font-display text-[clamp(48px,8vw,140px)] text-paper leading-[0.9] tracking-tight">
-              Let&apos;s make
+              Tell me about
               <br />
-              <span className="font-display-italic">something good.</span>
+              <span className="font-display-italic">your place.</span>
             </h2>
 
             <p className="mt-8 max-w-xl text-paper/85 text-lg leading-[1.5]">
-              Tell us about your business. New site, refresh, or a second
-              opinion — we read every brief and reply within a day.
+              A new site, a refresh, or a gut-check on what you already have. I
+              read every message myself and reply within a day.
             </p>
 
             {/* Direct contact pills */}

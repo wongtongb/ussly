@@ -1,8 +1,6 @@
 import { requireAdminPage } from "@/lib/supabase/require-admin";
-import { updateBriefStatus, deleteBrief } from "../actions";
-import type { Brief, BriefStatus } from "@/lib/supabase/types";
-
-const statuses: BriefStatus[] = ["new", "replied", "archived"];
+import { BriefControls } from "./BriefControls";
+import type { Brief } from "@/lib/supabase/types";
 
 export default async function BriefsPage() {
   const { admin } = await requireAdminPage();
@@ -88,39 +86,7 @@ export default async function BriefsPage() {
                   {b.budget && <Meta label="Budget">{b.budget}</Meta>}
                   {b.project && <Meta label="Project">{b.project}</Meta>}
                 </div>
-                <div className="md:col-span-12 flex flex-wrap items-center gap-2 pt-5 mt-2 border-t border-rule">
-                  {statuses.map((s) => (
-                    <form
-                      key={s}
-                      action={async () => {
-                        "use server";
-                        await updateBriefStatus(b.id, s);
-                      }}
-                    >
-                      <button
-                        disabled={b.status === s}
-                        className={`font-mono text-[10px] uppercase tracking-[0.18em] px-3 py-1.5 rounded-full border transition-colors ${
-                          b.status === s
-                            ? "bg-ink text-paper border-ink"
-                            : "border-ink/15 text-ink-muted hover:border-ink hover:text-ink"
-                        }`}
-                      >
-                        Mark {s}
-                      </button>
-                    </form>
-                  ))}
-                  <form
-                    action={async () => {
-                      "use server";
-                      await deleteBrief(b.id);
-                    }}
-                    className="ml-auto"
-                  >
-                    <button className="font-mono text-[10px] uppercase tracking-[0.18em] text-ink-muted hover:text-accent transition-colors">
-                      Delete
-                    </button>
-                  </form>
-                </div>
+                <BriefControls brief={b} />
               </div>
             </details>
           ))}

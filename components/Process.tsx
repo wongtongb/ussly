@@ -1,27 +1,27 @@
 const steps = [
   {
     num: "i.",
-    title: "Conversation",
+    title: "Talk",
     duration: "Week 0",
-    body: "A real call, not a form-bot. We talk about your business, your customers, and what success looks like. If we're not a fit, we say so on the spot.",
+    body: "A real call, not a chatbot. We dig into your business, your customers, and what “working” means in dollars. Bad fit? You hear it on the call, not after a deposit.",
   },
   {
     num: "ii.",
     title: "Direction",
     duration: "Week 1",
-    body: "Moodboard, sitemap, and a written design direction. You'll see exactly where this is headed before any pixel-pushing begins.",
+    body: "Sitemap, moodboard, and a written plan. You see where this is headed before anyone touches a pixel, and you sign off before we build.",
   },
   {
     num: "iii.",
-    title: "Design & Build",
+    title: "Build in the open",
     duration: "Weeks 2–4",
-    body: "Design lives in the browser, not Figma. You'll get a real, working link to click around — and feedback gets baked in same-day.",
+    body: "Design happens in the browser, on a real link you can click. Feedback goes in the same day. No Figma guesswork, no big reveal at the end.",
   },
   {
     num: "iv.",
-    title: "Launch & beyond",
+    title: "Ship",
     duration: "Week 5",
-    body: "Deploy, hand-off, and a 30-day check-in. We're around for tweaks and won't ghost you the day the invoice clears.",
+    body: "We launch, hand over the keys, and check back at 30 days. Tweaks included. We don't vanish the moment the invoice clears.",
   },
 ];
 
@@ -39,15 +39,16 @@ export default function Process() {
           </div>
           <div className="col-span-12 md:col-span-9">
             <h2 className="font-display text-[clamp(40px,7vw,108px)] text-paper leading-[0.92] tracking-tight">
-              Four weeks,
+              Five weeks,
               <br />
               <span className="font-display-italic text-accent">
-                no surprises.
+                no mysteries.
               </span>
             </h2>
             <p className="mt-6 max-w-xl text-paper/75 text-base lg:text-[17px] leading-[1.55]">
-              Each project follows the same arc. You always know where it is,
-              what comes next, and what you owe.
+              Every project runs the same track. You always know where it sits,
+              what comes next, and what you owe. No surprise line items at the
+              end.
             </p>
           </div>
         </div>
@@ -86,7 +87,7 @@ export default function Process() {
             P.S.
           </span>
           <p className="font-display-italic text-2xl lg:text-3xl text-paper">
-            Fixed scope. Fixed price. No retainer traps.
+            Fixed scope. Fixed price. No retainer you can&apos;t quit.
           </p>
         </div>
       </div>

@@ -1,34 +1,34 @@
 const services = [
   {
     num: "01",
-    title: "Web Design",
-    italic: "from blank page",
+    title: "Design",
+    italic: "the look",
     description:
-      "Custom site design, never templates. Typography, layout, and pacing built around your actual business — not a Figma kit.",
-    tags: ["Layout", "Type", "Art direction"],
+      "Custom design from a blank canvas. Type, grid, color, and pacing chosen for your business, not lifted from a kit everyone else is using.",
+    tags: ["Art direction", "Layout", "Type"],
   },
   {
     num: "02",
-    title: "Development",
-    italic: "clean & fast",
+    title: "Build",
+    italic: "the engine",
     description:
-      "Hand-written code. Sites load in under a second, work on every phone, and stay easy to update for the next five years.",
+      "Hand-written code. Fast on the cheapest phone, simple to update, and yours to keep. No monthly platform rent, no plugin tower waiting to break.",
     tags: ["Next.js", "Astro", "Hand-coded"],
   },
   {
     num: "03",
-    title: "Brand Identity",
-    italic: "small but mighty",
+    title: "Identity",
+    italic: "the face",
     description:
-      "Logo, palette, type system, and the dozen tiny details that make a brand feel coherent across a sign, a menu, and a screen.",
+      "Logo, color, and a type system that holds together everywhere your business shows up, from the sign on the door to a story highlight.",
     tags: ["Logo", "Palette", "System"],
   },
   {
     num: "04",
-    title: "Strategy & Copy",
-    italic: "say it right",
+    title: "Words",
+    italic: "the plan",
     description:
-      "We figure out what the site is actually for and write the words that go on it. Plain English, not marketing speak.",
+      "We work out what the site is for, then write the pages in plain English. No filler paragraphs, no slogans nobody believes.",
     tags: ["Positioning", "Copy", "Sitemap"],
   },
 ];
@@ -47,46 +47,43 @@ export default function Services() {
           </div>
           <div className="col-span-12 md:col-span-9">
             <h2 className="font-display text-[clamp(40px,7vw,108px)] text-ink leading-[0.92] tracking-tight">
-              What we make,
+              What you get,
               <br />
               <span className="font-display-italic text-accent">
-                end to end.
+                and who does it.
               </span>
             </h2>
             <p className="mt-6 max-w-xl text-ink/80 text-base lg:text-[17px] leading-[1.55]">
-              One designer. One builder. Same person. That means every decision —
-              from the typeface to the page-load tweak — runs through one head.
-              Fewer meetings. Better outcomes.
+              One person designs it, builds it, and writes it. Every decision
+              runs through one head, so nothing gets lost in a handoff and nobody
+              books a meeting to schedule the next meeting.
             </p>
           </div>
         </div>
 
-        {/* Service grid — alternating offsets */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-2">
-          {services.map((s, i) => (
+        {/* Service index — full-width rows */}
+        <div className="border-t border-ink">
+          {services.map((s) => (
             <div
               key={s.num}
-              className={`group relative border-t border-ink py-8 lg:py-10 ${
-                i % 2 === 1 ? "md:translate-y-12" : ""
-              }`}
+              className="group grid grid-cols-12 gap-x-6 gap-y-4 items-start border-b border-rule py-8 lg:py-12 transition-colors"
             >
-              <div className="flex items-start gap-4 mb-4">
-                <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-ink-muted pt-2">
+              {/* Number + title */}
+              <div className="col-span-12 md:col-span-5 flex items-baseline gap-4">
+                <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-ink-muted pt-3 group-hover:text-accent transition-colors">
                   {s.num}
                 </span>
-                <div className="flex-1">
-                  <h3 className="font-display text-[40px] lg:text-[56px] text-ink leading-[0.95] tracking-tight">
-                    {s.title}
-                    <br />
-                    <span className="font-display-italic text-accent text-[32px] lg:text-[44px]">
-                      {s.italic}
-                    </span>
-                  </h3>
-                </div>
+                <h3 className="font-display text-[44px] lg:text-[64px] text-ink leading-[0.92] tracking-tight transition-transform duration-300 ease-out group-hover:translate-x-1">
+                  {s.title}{" "}
+                  <span className="font-display-italic text-accent text-[30px] lg:text-[40px]">
+                    {s.italic}
+                  </span>
+                </h3>
               </div>
 
-              <div className="pl-0 md:pl-12 max-w-md">
-                <p className="text-ink/85 leading-relaxed text-[15px] mb-4">
+              {/* Description + tags */}
+              <div className="col-span-12 md:col-span-6 md:col-start-7 max-w-xl">
+                <p className="text-ink/85 leading-relaxed text-[15px] lg:text-base mb-4">
                   {s.description}
                 </p>
                 <ul className="flex flex-wrap gap-x-4 gap-y-1">

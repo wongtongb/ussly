@@ -12,7 +12,13 @@ const projectTypes = [
   "Just a question",
 ];
 
-const budgets = ["< $3k", "$3k–$6k", "$6k–$12k", "$12k+", "Not sure yet"];
+const budgets = [
+  "Starter · $250",
+  "Standard · $400",
+  "Complete · $500",
+  "Brand + Site · $750",
+  "Not sure yet",
+];
 const CUSTOM = "__custom__";
 
 function formatCustomBudget(raw: string): string {
@@ -135,7 +141,7 @@ export default function ContactForm() {
                 type="text"
                 inputMode="numeric"
                 pattern="[0-9,]*"
-                placeholder="5,400"
+                placeholder="650"
                 value={customBudget}
                 onChange={(e) => setCustomBudget(e.target.value.replace(/[^\d,]/g, ""))}
                 aria-label="Custom budget amount in USD"

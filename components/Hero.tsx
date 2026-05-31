@@ -3,27 +3,25 @@ export default function Hero() {
     <section className="relative pt-16 lg:pt-24 pb-20 lg:pb-28 overflow-hidden">
       <div className="max-w-[1380px] mx-auto px-6 lg:px-12">
         <div className="flex items-center justify-between mb-10 lg:mb-14">
-          <div className="flex items-center gap-3">
-            <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-ink-muted">
-              Independent Studio · Vol. 01
-            </span>
-          </div>
+          <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-ink-muted">
+            Independent Studio · Vol. 02
+          </span>
           <div className="hidden sm:flex items-center gap-6 font-mono text-[10px] uppercase tracking-[0.18em] text-ink-muted">
             <span>Lynnwood / Remote</span>
             <span>·</span>
-            <span>2026</span>
+            <span>Est. 2023</span>
           </div>
         </div>
 
         {/* Massive editorial headline */}
-        <h1 className="font-display text-[clamp(64px,12vw,200px)] text-ink leading-[0.88] tracking-[-0.035em] rise">
-          <span className="block font-black">Websites that</span>
+        <h1 className="font-display text-[clamp(60px,11.5vw,190px)] text-ink leading-[0.88] tracking-[-0.035em] rise">
+          <span className="block font-black">The one website</span>
           <span className="block">
             <span className="font-display-italic font-medium text-accent">
-              earn their keep,
+              your block
             </span>
           </span>
-          <span className="block font-black">built by hand.</span>
+          <span className="block font-black">remembers.</span>
         </h1>
 
         {/* Sub-grid: lede + intro */}
@@ -33,21 +31,24 @@ export default function Hero() {
               The studio
             </p>
             <p className="font-display text-2xl lg:text-[28px] leading-[1.15] text-ink tracking-tight">
-              A small, sharp practice making sites that{" "}
-              <span className="font-display-italic text-accent">don&apos;t look</span>{" "}
-              like everyone else&apos;s.
+              A one-person practice building sites for the kind of place people{" "}
+              <span className="font-display-italic text-accent">
+                drive across town
+              </span>{" "}
+              for.
             </p>
           </div>
 
           <div className="col-span-12 md:col-span-5 md:col-start-7 lg:col-span-4 lg:col-start-8">
             <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-ink-muted mb-3">
-              What it&apos;s worth
+              Why it&apos;s different
             </p>
             <p className="text-base lg:text-[17px] leading-[1.55] text-ink/85">
-              Most small-business sites are a tax. Ours pay rent — more bookings,
-              better search rank, fewer no-shows. Built once, hand-coded, no
-              redesign for five years. The cost? Less than three months of
-              third-party Squarespace + plugins.
+              A template makes your shop look like the shop next door. We start
+              from your actual room, your actual menu, your actual regulars, and
+              hand-code something that still loads under a second and still looks
+              right in five years. Costs less than a year of Squarespace plus
+              plugins.
             </p>
 
             <div className="mt-6 flex flex-wrap items-center gap-3">
@@ -55,42 +56,47 @@ export default function Hero() {
                 href="#contact"
                 className="group inline-flex items-center gap-2 bg-ink text-paper px-5 py-3 rounded-full text-sm font-medium hover:bg-accent transition-colors"
               >
-                Claim the slot
+                Start a project
                 <span>↗</span>
               </a>
               <a
                 href="#work"
                 className="inline-flex items-center gap-2 text-ink px-1 py-3 text-sm font-medium border-b border-ink hover:text-accent hover:border-accent transition-colors"
               >
-                See receipts
+                See the work
               </a>
             </div>
           </div>
         </div>
 
-        {/* Stats strip — receipts */}
-        <div className="mt-20 lg:mt-28 pt-8 border-t border-rule grid grid-cols-2 lg:grid-cols-4 gap-y-8">
-          {[
-            { prefix: "+", num: "42", suffix: "%", label: "Reservations lift · Yemeni House" },
-            { prefix: "#", num: "1", suffix: "", label: "On Google · Northwest Fades" },
-            { prefix: "", num: "0.9", suffix: "s", label: "Page-load, every site" },
-            { prefix: "", num: "0", suffix: "", label: "Templates used. Ever." },
-          ].map((stat) => (
-            <div key={stat.label} className="flex flex-col gap-1">
-              <span className="font-display text-[64px] lg:text-[88px] leading-none text-ink tracking-tighter">
-                {stat.prefix && (
-                  <span className="text-accent font-display-italic">{stat.prefix}</span>
-                )}
-                {stat.num}
-                {stat.suffix && (
-                  <span className="text-accent font-display-italic">{stat.suffix}</span>
-                )}
-              </span>
-              <span className="font-mono text-[10px] uppercase tracking-[0.18em] text-ink-muted mt-2 max-w-[180px]">
-                {stat.label}
-              </span>
-            </div>
-          ))}
+        {/* Ledger strip — receipts */}
+        <div className="mt-20 lg:mt-28 pt-6 border-t border-ink">
+          <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-ink-muted mb-8">
+            The receipts
+          </p>
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-y-8">
+            {[
+              { prefix: "+", num: "42", suffix: "%", label: "Reservations after launch · Yemeni House" },
+              { prefix: "#", num: "1", suffix: "", label: "Google result · Northwest Fades" },
+              { prefix: "", num: "0.9", suffix: "s", label: "Page load, every build" },
+              { prefix: "", num: "0", suffix: "", label: "Templates used, lifetime" },
+            ].map((stat) => (
+              <div key={stat.label} className="flex flex-col gap-1">
+                <span className="font-display text-[64px] lg:text-[88px] leading-none text-ink tracking-tighter">
+                  {stat.prefix && (
+                    <span className="text-accent font-display-italic">{stat.prefix}</span>
+                  )}
+                  {stat.num}
+                  {stat.suffix && (
+                    <span className="text-accent font-display-italic">{stat.suffix}</span>
+                  )}
+                </span>
+                <span className="font-mono text-[10px] uppercase tracking-[0.18em] text-ink-muted mt-2 max-w-[180px]">
+                  {stat.label}
+                </span>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

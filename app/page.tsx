@@ -3,8 +3,10 @@ import ScarcityRibbon from "@/components/ScarcityRibbon";
 import Hero from "@/components/Hero";
 import Services from "@/components/Services";
 import Portfolio from "@/components/Portfolio";
+import Studio from "@/components/Studio";
 import Process from "@/components/Process";
 import Testimonials from "@/components/Testimonials";
+import Pricing from "@/components/Pricing";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
 
@@ -61,8 +63,10 @@ export default function Home() {
         <Hero />
         <Services />
         <Portfolio />
+        <Studio />
         <Process />
         <Testimonials />
+        <Pricing />
         <CTASection />
       </main>
       <Footer />
