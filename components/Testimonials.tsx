@@ -53,7 +53,7 @@ export default async function Testimonials() {
             <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-accent">
               § IV · Words
             </span>
-            <div className="dotted-rule text-rule mt-4 hidden md:block" />
+            <div className="dotted-rule text-ink-muted/50 mt-4 hidden md:block" />
           </div>
           <div className="col-span-12 md:col-span-9">
             <h2 className="font-display text-[clamp(40px,7vw,108px)] text-ink leading-[0.92] tracking-tight">

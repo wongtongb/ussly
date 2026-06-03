@@ -1,14 +1,16 @@
 @import "tailwindcss";
 
 @theme {
-  --color-paper: #F5F1E8;
-  --color-paper-deep: #EDE6D6;
-  --color-ink: #141414;
-  --color-ink-muted: #5C544A;
-  --color-rule: #D8CFBC;
-  --color-accent: #C8501E;
-  --color-accent-deep: #9A3D14;
-  --color-cream-card: #FBF8F1;
+  /* Dark / luxe — paper now reads as the dark surface, ink as warm light text.
+     Inverted bg-ink panels become elegant light feature blocks. */
+  --color-paper: #0C0C0E;
+  --color-paper-deep: #08080A;
+  --color-ink: #F3ECDD;
+  --color-ink-muted: #9C9488;
+  --color-rule: #2C2A31;
+  --color-accent: #C9A24B;
+  --color-accent-deep: #E2C173;
+  --color-cream-card: #16161B;
 
   --font-display: var(--font-fraunces);
   --font-sans: var(--font-geist);
@@ -32,6 +34,22 @@ body {
   font-feature-settings: "ss01", "ss02", "cv11";
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+  /* warm light pooling from the top — single fixed atmosphere, no per-section glow spam */
+  background-image:
+    radial-gradient(120% 60% at 50% -10%, rgba(201, 162, 75, 0.10), transparent 60%),
+    radial-gradient(90% 50% at 100% 0%, rgba(201, 162, 75, 0.05), transparent 55%);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+/* Restrained gold glow — for the one or two hero/CTA moments only */
+.glow {
+  box-shadow:
+    0 0 0 1px color-mix(in oklab, var(--color-accent) 35%, transparent),
+    0 18px 60px -20px color-mix(in oklab, var(--color-accent) 45%, transparent);
+}
+.text-glow {
+  text-shadow: 0 0 36px color-mix(in oklab, var(--color-accent) 40%, transparent);
 }
 
 ::selection {

@@ -9,7 +9,7 @@ export default function Hero() {
           <div className="hidden sm:flex items-center gap-6 font-mono text-[10px] uppercase tracking-[0.18em] text-ink-muted">
             <span>Lynnwood / Remote</span>
             <span>·</span>
-            <span>Est. 2023</span>
+            <span>Est. 2026</span>
           </div>
         </div>
 
@@ -17,7 +17,7 @@ export default function Hero() {
         <h1 className="font-display text-[clamp(60px,11.5vw,190px)] text-ink leading-[0.88] tracking-[-0.035em] rise">
           <span className="block font-black">The one website</span>
           <span className="block">
-            <span className="font-display-italic font-medium text-accent">
+            <span className="font-display-italic font-medium text-accent text-glow">
               your block
             </span>
           </span>
@@ -54,7 +54,7 @@ export default function Hero() {
             <div className="mt-6 flex flex-wrap items-center gap-3">
               <a
                 href="#contact"
-                className="group inline-flex items-center gap-2 bg-ink text-paper px-5 py-3 rounded-full text-sm font-medium hover:bg-accent transition-colors"
+                className="group glow inline-flex items-center gap-2 bg-accent text-paper px-5 py-3 rounded-full text-sm font-medium hover:bg-accent-deep transition-colors"
               >
                 Start a project
                 <span>↗</span>
