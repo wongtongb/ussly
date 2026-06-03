@@ -13,10 +13,14 @@ export default function Icon() {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          backgroundColor: "#C8501E",
-          color: "#F5F1E8",
-          fontSize: 46,
-          fontWeight: 800,
+          background: "#0C0C0E",
+          color: "#C9A24B",
+          fontSize: 42,
+          fontWeight: 600,
+          fontFamily: "Georgia, 'Times New Roman', serif",
+          borderRadius: 14,
+          border: "1px solid rgba(201, 162, 75, 0.35)",
+          letterSpacing: "-0.02em",
         }}
       >
         U

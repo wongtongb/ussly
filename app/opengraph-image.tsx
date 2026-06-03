@@ -16,8 +16,8 @@ export default function Image() {
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
-          backgroundColor: "#F5F1E8",
-          color: "#141414",
+          backgroundColor: "#0C0C0E",
+          color: "#F3ECDD",
           padding: "72px 80px",
         }}
       >
@@ -28,16 +28,16 @@ export default function Image() {
             fontSize: 22,
             letterSpacing: 4,
             textTransform: "uppercase",
-            color: "#5C544A",
+            color: "#9C9488",
           }}
         >
-          <span>Independent Studio · Vol. 01</span>
+          <span>Independent Studio · Vol. 02</span>
           <span>Lynnwood, WA</span>
         </div>
 
         <div style={{ display: "flex", flexDirection: "column" }}>
           <div style={{ display: "flex", fontSize: 150, fontWeight: 800, lineHeight: 1 }}>
-            Ussly<span style={{ color: "#C8501E" }}>.</span>
+            Ussly<span style={{ color: "#C9A24B" }}>.</span>
           </div>
           <div
             style={{
@@ -45,10 +45,10 @@ export default function Image() {
               fontSize: 52,
               fontWeight: 600,
               marginTop: 18,
-              color: "#141414",
+              color: "#F3ECDD",
             }}
           >
-            Websites that earn their keep<span style={{ color: "#C8501E" }}>.</span>
+            Websites that earn their keep<span style={{ color: "#C9A24B" }}>.</span>
           </div>
         </div>
 
@@ -58,10 +58,10 @@ export default function Image() {
             alignItems: "center",
             gap: 16,
             fontSize: 24,
-            color: "#5C544A",
+            color: "#9C9488",
           }}
         >
-          <div style={{ display: "flex", width: 56, height: 6, backgroundColor: "#C8501E" }} />
+          <div style={{ display: "flex", width: 56, height: 6, backgroundColor: "#C9A24B" }} />
           <span>Hand-coded · No templates · ussly.design</span>
         </div>
       </div>
