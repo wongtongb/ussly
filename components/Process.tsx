@@ -27,7 +27,7 @@ const steps = [
 
 export default function Process() {
   return (
-    <section id="process" className="relative py-24 lg:py-36 bg-ink text-paper">
+    <section id="process" className="relative py-24 lg:py-36 bg-paper-deep text-ink border-y border-rule">
       <div className="max-w-[1380px] mx-auto px-6 lg:px-12">
         {/* Section header */}
         <div className="grid grid-cols-12 gap-x-6 mb-16 lg:mb-24">
@@ -35,17 +35,17 @@ export default function Process() {
             <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-accent">
               § III · Process
             </span>
-            <div className="dotted-rule text-paper/40 mt-4 hidden md:block" />
+            <div className="dotted-rule text-ink-muted/40 mt-4 hidden md:block" />
           </div>
           <div className="col-span-12 md:col-span-9">
-            <h2 className="font-display text-[clamp(40px,7vw,108px)] text-paper leading-[0.92] tracking-tight">
+            <h2 className="font-display text-[clamp(40px,7vw,108px)] text-ink leading-[0.92] tracking-tight">
               Five weeks,
               <br />
               <span className="font-display-italic text-accent">
                 no mysteries.
               </span>
             </h2>
-            <p className="mt-6 max-w-xl text-paper/75 text-base lg:text-[17px] leading-[1.55]">
+            <p className="mt-6 max-w-xl text-ink-muted text-base lg:text-[17px] leading-[1.55]">
               Every project runs the same track. You always know where it sits,
               what comes next, and what you owe. No surprise line items at the
               end.
@@ -58,7 +58,7 @@ export default function Process() {
           {steps.map((s, i) => (
             <li
               key={s.num}
-              className={`relative py-8 lg:py-12 border-t border-paper/15 ${
+              className={`relative py-8 lg:py-12 border-t border-rule ${
                 i % 2 === 1 ? "md:translate-y-16" : ""
               }`}
             >
@@ -66,15 +66,15 @@ export default function Process() {
                 <span className="font-display-italic text-[80px] lg:text-[120px] text-accent leading-none">
                   {s.num}
                 </span>
-                <span className="font-mono text-[10px] uppercase tracking-[0.18em] text-paper/50">
+                <span className="font-mono text-[10px] uppercase tracking-[0.18em] text-ink-muted">
                   {s.duration}
                 </span>
               </div>
 
-              <h3 className="font-display text-3xl lg:text-4xl text-paper tracking-tight mb-3">
+              <h3 className="font-display text-3xl lg:text-4xl text-ink tracking-tight mb-3">
                 {s.title}
               </h3>
-              <p className="text-paper/75 leading-[1.6] text-[15px] max-w-md">
+              <p className="text-ink-muted leading-[1.6] text-[15px] max-w-md">
                 {s.body}
               </p>
             </li>
@@ -82,11 +82,11 @@ export default function Process() {
         </ol>
 
         {/* Footnote */}
-        <div className="mt-20 pt-6 border-t border-paper/15 flex flex-wrap items-baseline gap-x-4 gap-y-2">
-          <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-paper/50">
+        <div className="mt-20 pt-6 border-t border-rule flex flex-wrap items-baseline gap-x-4 gap-y-2">
+          <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-ink-muted">
             P.S.
           </span>
-          <p className="font-display-italic text-2xl lg:text-3xl text-paper">
+          <p className="font-display-italic text-2xl lg:text-3xl text-ink">
             Fixed scope. Fixed price. No retainer you can&apos;t quit.
           </p>
         </div>

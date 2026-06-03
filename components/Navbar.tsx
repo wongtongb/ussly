@@ -39,7 +39,7 @@ export default function Navbar() {
               Ussly
             </span>
             <span className="font-mono text-[10px] uppercase tracking-[0.18em] text-ink-muted hidden sm:inline">
-              est. 2023
+              est. 2026
             </span>
           </Link>
 
